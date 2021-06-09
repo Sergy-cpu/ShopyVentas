@@ -1,3 +1,6 @@
+
+$primary-header: #1797FF;
+
 nav > a {
     padding: 5px;
     text-decoration: none;
@@ -10,4 +13,26 @@ nav > a.active {
 
 .header-row{
     width: 100%;
+}
+
+mat-toolbar {
+    background-color: $primary-header;
+    box-shadow: 1px 1px 2px black;
+}
+
+.logo-header {
+    width: 50px;
+    margin-left: 20px;
+    
+}
+.container__logo {
+    display: flex;
+    
+}
+.container__logo h1 {
+    color: white;
+    margin-left: 10px;
+   margin-top: 8px;
+   text-shadow: 1px 1px black;
+   font-size: 22px;
 }

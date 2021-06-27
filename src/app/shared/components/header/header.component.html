@@ -1,4 +1,71 @@
-<mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+
+        <div class="nav__container">
+          <section class="links">
+            <a mat-button routerLink="/home" routerLinkActive="active"><span>Inicio</span> </a>
+          <a mat-button routerLink="#" routerLinkActive="active"><span>¿Qué nos motiva?</span> </a>
+          <a mat-button routerLink="/contac" routerLinkActive="active"><span>Contáctanos</span> </a>
+          <a mat-button routerLink="/products" routerLinkActive="active"><span>Productos</span> </a>
+          <a mat-button routerLink="#" routerLinkActive="active"><span>Blog</span></a>
+          </section>
+
+          <section class="followers">
+            <h1>Siguenos!</h1>
+            <span class="media-icon"><img src="../../../../assets/img/instagram.png" alt=""></span>
+            <span class="media-icon"><img src="../../../../assets/img/facebook.png" alt=""></span>
+            <span class="media-icon"><img src="../../../../assets/img/youtube.png" alt=""></span>
+           
+          </section>
+          <div class="callus"> 
+            <span class="media-icon"><img src="../../../../assets/img/whatsapp.png" alt=""></span>
+
+          <p>322 4272380</p>
+          </div>
+          <svg class="stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 961" aria-labelledby="title"><title id="title">Stars</title><path fill="none" d="M.84.97h2000v961H.84z"/><path data-name="star-medium" d="M131.09 152.85l1.27-7.83-5.72-5.49 7.84-1.21 3.45-7.14 3.57 7.09 7.86 1.07-5.63 5.59 1.4 7.81-7.05-3.64-6.99 3.75z"/><path data-name="star-medium" d="M313.03 320.9l.45-7.42-5.86-4.58 7.2-1.86 2.55-6.99 3.99 6.27 7.44.26-4.73 5.74 2.05 7.15-6.92-2.72-6.17 4.15z"/><path data-name="star-big" d="M228.31 45.91l8.3-10.27-3.75-12.66 12.33 4.72 10.88-7.48-.68 13.19 10.48 8.03-12.75 3.43-4.41 12.45-7.2-11.07-13.2-.34z"/><path data-name="star" d="M101.92 300.05l4.14-2.04.66-4.56 3.22 3.3 4.54-.78-2.14 4.08 2.14 4.08-4.54-.78-3.22 3.31-.66-4.57-4.14-2.04z"/><path data-name="star" d="M56.09 57.32l1.65-.82.27-1.82L59.29 56l1.82-.31-.86 1.63.86 1.63-1.82-.31-1.28 1.32-.27-1.83-1.65-.81z"/><path data-name="star" d="M465.81 166.74l.43-3.3-2.48-2.22 3.27-.61 1.35-3.04 1.6 2.92 3.3.34-2.28 2.42.69 3.25-3-1.43-2.88 1.67z"/><path data-name="star" d="M855.05 109.14l2.5-5.35-2.98-5.1 5.86.73 3.92-4.41 1.12 5.79 5.41 2.37-5.17 2.86-.58 5.87-4.31-4.03-5.77 1.27z"/><path data-name="star" d="M473.28 355.88l-2.04-4.14-4.56-.66 3.3-3.22-.78-4.54 4.08 2.14 4.08-2.14-.78 4.54 3.31 3.22-4.57.66-2.04 4.14z"/><path data-name="star-medium" d="M1243.59 38.77l6.61-3.27 1.06-7.3 5.15 5.28 7.28-1.24-3.44 6.53 3.44 6.53-7.28-1.25-5.15 5.29-1.06-7.31-6.61-3.26z"/><path data-name="star" d="M1557.47 108.41l1.68-4.95-3.12-4.18 5.22.07 3.01-4.26 1.55 4.98 4.98 1.55-4.26 3.01.07 5.22-4.18-3.12-4.95 1.68z"/><path data-name="star" d="M835.25 142.01l2.48-1.22.4-2.74 1.93 1.98 2.73-.46-1.29 2.44 1.29 2.45-2.73-.46-1.93 1.98-.4-2.74-2.48-1.23z"/><path data-name="star-medium" d="M726.92 273.68l1.69-7-4.82-5.36 7.18-.56 3.61-6.23 2.76 6.65 7.04 1.51-5.48 4.67.74 7.17-6.14-3.77-6.58 2.92z"/><path data-name="star" d="M629.7 38.77l4.13-2.04.67-4.57 3.22 3.31 4.54-.78-2.15 4.08 2.15 4.08-4.54-.78-3.22 3.3-.67-4.56-4.13-2.04z"/><path data-name="star" d="M1143.59 176.46l1.66-2.88-1.43-3 3.26.69 2.41-2.28.35 3.3 2.92 1.59-3.04 1.36-.61 3.26-2.23-2.47-3.29.43z"/><path data-name="star" d="M1374.67 120.99l1.65-.82.27-1.83 1.28 1.33 1.82-.32-.86 1.64.86 1.63-1.82-.31-1.28 1.32-.27-1.83-1.65-.81z"/><path data-name="star" d="M994.98 45.37l1.65-.81.26-1.83 1.29 1.32 1.82-.31-.86 1.63.86 1.64-1.82-.32-1.29 1.33-.26-1.83-1.65-.82z"/><path data-name="star-big" d="M897.38 361.7l2.52-7.41-4.68-6.27 7.82.1 4.52-6.39 2.32 7.47 7.48 2.32-6.39 4.52.1 7.83-6.28-4.68-7.41 2.51z"/><path data-name="shooting-star" d="M1072.75 300.05l2.2-5.97-3.68-5.2 6.36.25 3.8-5.11 1.74 6.12 6.03 2.05-5.29 3.54-.08 6.36-5-3.93-6.08 1.89z"/><path data-name="shooting-star-alternate" d="M1049.14 357.02l2.1-6.18-3.9-5.23 6.52.09 3.76-5.33 1.94 6.23 6.23 1.94-5.33 3.76.09 6.52-5.23-3.9-6.18 2.1z"/><path data-name="star-big" d="M29.83 310.95l5-8.64-4.29-9.01 9.76 2.08 7.25-6.86 1.03 9.93 8.76 4.77-9.11 4.05-1.84 9.81-6.67-7.42-9.89 1.29z"/><path data-name="star" d="M17.2 195.91l4.55-3.28-.12-5.61 4.53 3.32 5.3-1.84-1.76 5.32 3.39 4.47-5.61-.03-3.2 4.61-1.71-5.34-5.37-1.62z"/><path data-name="star" d="M1608.86 28.2l.14-5.98-4.85-3.5 5.73-1.72 1.83-5.69 3.4 4.92 5.98-.02-3.62 4.75 1.87 5.69-5.65-1.98-4.83 3.53z"/><path data-name="star" d="M1279.7 142.01l.49-3.17-2.34-2.21 3.17-.51 1.37-2.91 1.47 2.86 3.19.41-2.26 2.28.59 3.16-2.86-1.45-2.82 1.54z"/><path data-name="star" d="M1813.03 76.46l1.66-2.88-1.42-3 3.25.69 2.41-2.28.35 3.3 2.92 1.6-3.04 1.34-.61 3.27-2.22-2.47-3.3.43z"/><path data-name="star-medium" d="M1597.75 102.47l1.64-6.28-4.24-4.9 6.48-.38 3.36-5.55 2.36 6.04 6.31 1.48-5.01 4.11.54 6.46-5.46-3.5-5.98 2.52z"/><path data-name="star" d="M1789.42 310.48l.83-.41.13-.91.64.66.91-.16-.43.82.43.82-.91-.16-.64.66-.13-.91-.83-.41z"/><path data-name="star" d="M1679.7 333.44l-1.19-8.67-7.82-3.93 7.87-3.82 1.33-8.65 6.06 6.32 8.63-1.42-4.13 7.72 4.01 7.77-8.61-1.54-6.15 6.22z"/><path data-name="star" d="M1431.09 243.13l.43-3.3-2.48-2.22 3.27-.61 1.35-3.04 1.59 2.92 3.31.34-2.29 2.42.7 3.25-3.01-1.43-2.87 1.67z"/><path data-name="star" d="M1835.25 85.36l1.66-.82.26-1.82 1.29 1.32 1.82-.31-.86 1.63.86 1.63-1.82-.31-1.29 1.32-.26-1.83-1.66-.81z"/><path data-name="shooting-star-alternate" d="M222.75 73.75l3.31-1.64.53-3.65 2.58 2.64 3.63-.62-1.71 3.27 1.71 3.26-3.63-.62-2.58 2.64-.53-3.65-3.31-1.63z"/><path data-name="star" d="M215.66 288.42l2.34-.79.37-1.76 1.82 1.27 2.56-.3-1.21 1.58 1.21 1.58-2.56-.3-1.82 1.28-.37-1.77-2.34-.79z"/><path data-name="star" d="M182.08 173.75l2.24-1.11.36-2.48 1.75 1.79 2.47-.42-1.17 2.22 1.17 2.21-2.47-.42-1.75 1.79-.36-2.48-2.24-1.1z"/><path data-name="star" d="M1037.84 59.96l6.25-3.08 1-6.91 4.87 5 6.87-1.18-3.24 6.17 3.24 6.17-6.87-1.18-4.87 5-1-6.9-6.25-3.09z"/><path data-name="star" d="M1268.59 320.9l-1.03-6.23-5.71-2.7 5.61-2.9.8-6.27 4.49 4.45 6.21-1.18-2.84 5.64 3.04 5.54-6.24-.95-4.33 4.6z"/><path data-name="star" d="M493.59 157.57l.26-3.63-2.83-2.27 3.53-.87 1.29-3.4 1.91 3.09 3.63.17-2.34 2.78.95 3.51-3.36-1.38-3.04 2z"/><path data-name="star" d="M378.09 372.77l.82-.41.14-.91.64.66.91-.15-.43.81.43.82-.91-.16-.64.66-.14-.91-.82-.41z"/><path data-name="star" d="M408.59 326.75l-3.28-2.5-3.92 1.3 1.35-3.9-2.44-3.32 4.13.08 2.4-3.35 1.2 3.95 3.93 1.26-3.39 2.35.02 4.13z"/><path data-name="star" d="M1132.62 339.94l.76-4.7-3.44-3.3 4.71-.72 2.07-4.29 2.15 4.25 4.72.65-3.39 3.35.85 4.69-4.24-2.18-4.19 2.25z"/><path data-name="star-medium" d="M588.03 309.16l-1.25-4.62-4.51-1.59 4-2.61.12-4.78 3.72 3 4.59-1.37-1.71 4.47 2.72 3.94-4.78-.24-2.9 3.8z"/><path data-name="shooting-star" d="M1742.2 178.5l2.13-1.92-.37-2.85 2.49 1.44 2.59-1.24-.59 2.81 1.97 2.09-2.85.3-1.38 2.53-1.17-2.63-2.82-.53z"/><path data-name="star" d="M1864.45 202.87l.83-.41.13-.91.64.66.91-.15-.43.81.43.82-.91-.16-.64.66-.13-.91-.83-.41z"/><path data-name="star-medium" d="M1974.07 205.78l1.28-7.83-5.72-5.49 7.84-1.21 3.45-7.14 3.57 7.09 7.86 1.08-5.64 5.58 1.41 7.81-7.05-3.64-7 3.75z"/><path data-name="star" d="M1966.87 288.42l.49-3.17-2.34-2.21 3.18-.51 1.37-2.91 1.47 2.86 3.19.41-2.27 2.28.6 3.16-2.87-1.45-2.82 1.54z"/><path data-name="star" d="M1889.39 356.11l.76-4.71-3.44-3.29 4.71-.73 2.07-4.29 2.15 4.25 4.72.65-3.38 3.35.84 4.69-4.23-2.18-4.2 2.26z"/><path data-name="star" d="M1960.91 29.01l2.14-1.92-.38-2.85 2.49 1.44 2.6-1.24-.6 2.81 1.98 2.09-2.86.3-1.37 2.52-1.17-2.62-2.83-.53z"/><path data-name="star-medium" d="M779.85 27.17l2.09-6.17-3.9-5.23 6.52.09 3.77-5.33 1.93 6.23 6.23 1.93-5.33 3.77.09 6.52-5.23-3.9-6.17 2.09z"/><path data-name="star" d="M436.67 15.89l.43-3.29-2.48-2.23 3.27-.61 1.35-3.04 1.59 2.92 3.31.35-2.28 2.41.69 3.26-3-1.43-2.88 1.66z"/><path data-name="star-big" d="M627.08 430.94l2.51-7.41-4.68-6.27 7.82.1 4.52-6.39 2.33 7.47 7.47 2.33-6.39 4.52.1 7.82-6.27-4.68-7.41 2.51z"/><path data-name="star-big" d="M1567.85 423.5l-1.19-8.67-7.82-3.93 7.88-3.81 1.32-8.65 6.06 6.31 8.64-1.41-4.13 7.71 4.01 7.78-8.61-1.55-6.16 6.22z"/><path data-name="star" d="M195.5 398.44l-2.04-4.14-4.56-.66 3.3-3.22-.78-4.54 4.08 2.14 4.08-2.14-.78 4.54 3.3 3.22-4.56.66-2.04 4.14z"/><path data-name="star" d="M1942.72 442.16l-1.02-6.23-5.72-2.7 5.62-2.9.79-6.27 4.5 4.44 6.21-1.18-2.84 5.65 3.04 5.54-6.25-.95-4.33 4.6z"/><path data-name="star" d="M304.26 429.9l-3.29-2.49-3.91 1.29 1.35-3.89-2.44-3.33 4.12.09 2.41-3.35 1.19 3.95 3.93 1.25-3.38 2.36.02 4.12z"/><path data-name="star" d="M1359.91 434.3l.49-3.17-2.34-2.21 3.17-.52 1.38-2.9 1.47 2.86 3.18.4-2.26 2.29.6 3.15-2.87-1.44-2.82 1.54z"/></svg>
+        </div>
+        
+        
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div>
+          <span>ShopyVentas</span>
+        </div>
+        
+        
+        <a class="carrito" mat-raised-button matBadge="4" matBadgeColor="warn">
+          <div class="carrito__info">
+            <mat-icon>shopping_cart</mat-icon>
+            <p>Carrito</p>
+          </div>            
+        </a>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+     
+      <router-outlet> </router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+
+
+<!-- <mat-toolbar>
     <mat-toolbar-row> 
         <div class="row between-xs middle-xs header-row">
         <div class="container__logo">
@@ -21,6 +88,21 @@
     </mat-toolbar-row>
 
 </mat-toolbar>
+ -->
+
+
+
+<!-- 
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>Shopyventas</span>
+    <span class="example-spacer"></span>
+    
+
+  </mat-toolbar> -->
 
 <!-- 
 <nav>

@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
 import { Product } from './../../../product.model';                                              
  
 @Injectable({
@@ -6,52 +9,16 @@ import { Product } from './../../../product.model';
 })
 export class ProductsService {
 
-  products: Product[] = [ 
-    {
-      id: '1',
-      image: '../assets/img/camiseta.webp',
-      title: 'Camiseta',
-      price: 80000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '2',
-      image: '../assets/img/hoodie.webp',
-      title: 'Hoodie',
-      price: 50000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '3',
-      image: '../assets/img/mug.png',
-      title: 'Mug',
-      price: 90000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '4',
-      image: '../assets/img/pin.webp',
-      title: 'Pin',
-      price: 180000,
-      description: 'bla bla bla bla bla'
-    },
-    {
-      id: '5',
-      image: '../assets/img/stickers1.png',
-      title: 'Stickers',
-      price: 70000,
-      description: 'bla bla bla bla bla'
-    },
-    
-  ];
-
-  constructor() { }
+  
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getAlllProducts() {
-    return this.products;
+    return this.http.get('');
   }
 
   getProduct(id: string) {
-    return this.products.find(item => id === item.id);
+    return this.http.get(``);
   }
 }

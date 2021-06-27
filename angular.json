@@ -36,7 +36,12 @@
               "./node_modules/swiper/swiper-bundle.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                
+              ]
+            }
           },
           "configurations": {
             "production": {

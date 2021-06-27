@@ -6,19 +6,17 @@ nav > a {
     text-decoration: none;
 }
 
-nav > a.active {
+.links > a.active {
     background-color: blue;
     color: white;
 }
 
-.header-row{
-    width: 100%;
-}
 
 mat-toolbar {
     background-color: $primary-header;
-    box-shadow: 1px 1px 2px black;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
 }
+
 
 .logo-header {
     width: 50px;
@@ -26,8 +24,7 @@ mat-toolbar {
     
 }
 .container__logo {
-    display: flex;
-    
+    display: flex; 
 }
 .container__logo h1 {
     color: white;
@@ -36,3 +33,189 @@ mat-toolbar {
    text-shadow: 1px 1px black;
    font-size: 22px;
 }
+
+  
+  .sidenav {
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .carrito {
+       margin-left: 35%; 
+     background-color: transparent;
+     margin-bottom: 20px;
+
+  }
+
+  .carrito mat-icon {
+      color: white;
+  }
+
+.carrito__info {
+   height: 0;  
+   width: 0;
+   display: flex;
+   
+}
+.carrito__info p {
+    display: none;
+}
+
+.links{
+   margin-left: 15%;
+}
+.media-icon img{
+    width: 30px;
+}
+.followers {
+    margin-top: 70px;
+    
+    h1 {
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 10%;
+    }
+    .media-icon{
+       margin-left: 15%; 
+       
+    }
+}
+.callus {
+    display: flex;
+    margin-left: 15%;
+    margin-top: 20px;
+    p {
+        font-size: 18px;
+        color: white;
+        border: 2px black;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+}
+
+.stars {
+    fill: white;
+    width: 220px;
+    margin-top: 60px;
+  }
+  
+  /* SVG stars animations */
+  path[data-name='star'] {
+    animation: 4s twinkle-star ease-in-out 0.2s infinite alternate backwards;
+    width: 140px;
+  }
+  
+  path[data-name='star-big'] {
+     animation: 6s twinkle-star-big ease-in-out infinite alternate backwards;
+  }
+  
+  path[data-name='star-medium'] {
+    animation: 7s twinkle-star-medium ease-in-out 0.4s infinite alternate;
+  }
+  
+  /* Note: these 2 are additions from the lesson, adding in a shooting star animation */
+  path[data-name='shooting-star'] {
+    opacity: 0;
+    animation: 10s shooting-star 1s linear infinite;
+  }
+  
+  path[data-name='shooting-star-alternate'] {
+    opacity: 0;
+    animation: 10s shooting-star 2s reverse linear infinite;
+  }
+  @keyframes twinkle-star {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    75% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes twinkle-star-big {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    75% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes twinkle-star-medium {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    75% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shooting-star {
+    0% {
+      opacity: 0.1;
+    }
+    30% {
+      opacity: 1;
+      transform: translateX(-85px);
+    }
+    100% {
+      transform: translateX(-85px);
+    }
+  }
+mat-nav-list {
+    background-image: linear-gradient(to top, #03259b, #0429a8, #062db5, #0731c2, #0935cf, #0442da, #014ee4, #005aee, #006ff5, #1c82fa, #3a95fd, #57a7ff);
+    height: 100%;
+}
+mat-nav-list a{
+    width: 80%;
+    font-size: 16px;
+   overflow-y: hidden;
+}
+.links span {
+    text-shadow: 0.2px 0px 6px white;
+}
+mat-toolbar {
+    background-color: $primary-header;
+    margin-bottom: 0px;
+}
+mat-sidenav {
+  width: 0;
+  height: 0;
+}
+
+  @media screen and(min-width: 768px) {
+    .carrito {
+        margin-left: 43%;
+        
+    }
+  }
